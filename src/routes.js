@@ -15,8 +15,7 @@ routes.get('/products/:id', ProductController.show);
 
 //Método de update
 routes.put("/products/:id", ProductController.update);
-
-routes.delete("products/:id", ProductController.destroy);
+routes.delete("/products/:id", ProductController.destroy);
 
 routes.post('/products', ProductController.store);
 //Isso daqui é para ser chamado lá pelo server.js

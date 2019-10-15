@@ -20,7 +20,7 @@ module.exports = {
     },
 
     async show(req, res){
-        let product = await Product.findById(req.params.id);
+        const product = await Product.findById(req.params.id);
 
         return res.json(product);
     },
@@ -28,7 +28,7 @@ module.exports = {
     //Método do post
     async store (req, res){
         //Product.create é um método que o mongoose fez p tois
-        let product = await Product.create(req.body);
+        const product = await Product.create(req.body);
 
         return res.json(product);
     },
@@ -36,7 +36,7 @@ module.exports = {
     async update(req, res){
         // O new vai retornar o produto antes de atualizar o produto. 
         // Com o new, vai aparecer o produto já com as mudanças realizadas.
-        let product = await Product.findByIdAndUpdate(req.params.id, req.body, 
+        const product = await Product.findByIdAndUpdate(req.params.id, req.body, 
             { new: true});
 
         return res.json(product);
